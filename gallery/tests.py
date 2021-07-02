@@ -36,3 +36,20 @@ class PosterTestClass(TestCase):
         self.assertTrue(len(poster)==0)
 
 
+
+class LocationTestClass(TestCase): 
+    def setUp(self):
+        self.new_location= Location('Muranga')  
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_location,Location))   
+    def test_save_location(self):
+        self.new_location.save_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location)>0)    
+    def test_delete_category(self):
+        self.new_location.save_location()
+        locations= Location.objects.all()
+        self.new_location.delete_location()
+        self.assertTrue(len(locations)==0)
+
+
