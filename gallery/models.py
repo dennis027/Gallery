@@ -25,15 +25,21 @@ class Category(models.Model):
         return self.name   
 
 class Image(models.Model):
-     image = models.CharField(max_length=255,primary_key = True)
-     title = models.CharField(max_length=255) 
+     image = models.ImageField(max_length=255)
+     title = models.CharField(max_length=255,primary_key = True) 
      description = models.CharField(max_length=255)
      date = models.CharField(max_length=255,null=True)
      location = models.ForeignKey(Location,on_delete=models.CASCADE)
      category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
+   
+
+
      def __str__(self):
          return self.image
+
+     def save_image(self):
+        self.save()
 
 
 
