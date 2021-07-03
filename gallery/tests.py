@@ -17,11 +17,11 @@ class ImageTestClass(TestCase):
     #     images = Image.objects.all()
     #     self.assertTrue(len(Image)>0)
     
-    def test_delete_method(self):
-        self.new.save_image()
-        image = Image.objects.all()
-        self.new.delete_image()
-        self.assertTrue(len(image)==0)
+    # def test_delete_method(self):
+    #     self.new.save_image()
+    #     image = Image.objects.all()
+    #     self.new.delete_image()
+    #     self.assertTrue(len(image)==0)
 
 class PosterTestClass(TestCase):
     def setUp(self):
