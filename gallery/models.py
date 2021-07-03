@@ -45,9 +45,8 @@ class Category(models.Model):
 
 class Image(models.Model):
      name = models.CharField(max_length=255,primary_key = True) 
-     image = models.ImageField(max_length=255)
-     description = models.CharField(max_length=255)
-     
+     image = models.ImageField(max_length=255,)
+     description = models.CharField(max_length=255) 
      location = models.ForeignKey(Location,on_delete=models.CASCADE)
      category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
@@ -57,10 +56,10 @@ class Image(models.Model):
      def __str__(self):
          return self.image
 
-     def save_delete(self):
+     def save_image(self):
         self.save()
 
-     def delete_delete(self):
+     def delete_image(self):
         self.delete()
             
     

@@ -1,21 +1,27 @@
 from gallery.models import Image,Poster,Location,Category
 from django.test import TestCase
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 # Create your tests here.
 
-# class ImageTestClass(TestCase):
-#     def setUp(self):
-#         self.new = Image(title='new',description='i downloaded',date='')
+class ImageTestClass(TestCase):
+    def setUp(self):
+        self.new = Image(name='new',description='i downloaded')
 
-#     def test_instances(self):
-#         self.assertTrue(isinstance(self.new,Image))    
+    def test_instances(self):
+        self.assertTrue(isinstance(self.new,Image))    
 
-#     #testing save method
-#     def test_save_method(self):
-#         self.new.save_image()
-#         images = Image.objects.all()
-#         self.assertTrue(len(Image)>0)
-
+    # testing save method
+    # def test_save_method(self):
+    #     self.new.save_image()
+    #     images = Image.objects.all()
+    #     self.assertTrue(len(Image)>0)
+    
+    def test_delete_method(self):
+        self.new.save_image()
+        image = Image.objects.all()
+        self.new.delete_image()
+        self.assertTrue(len(image)==0)
 
 class PosterTestClass(TestCase):
     def setUp(self):
