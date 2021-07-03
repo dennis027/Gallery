@@ -45,7 +45,7 @@ class Category(models.Model):
 
 class Image(models.Model):
      name = models.CharField(max_length=255,primary_key = True) 
-     image = models.ImageField(max_length=255,)
+     image = models.CharField(max_length=255)
      description = models.CharField(max_length=255) 
      location = models.ForeignKey(Location,on_delete=models.CASCADE)
      category = models.ForeignKey(Category,on_delete=models.CASCADE)
