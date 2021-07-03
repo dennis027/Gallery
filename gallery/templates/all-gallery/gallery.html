@@ -9,6 +9,7 @@
 <div class="row">
     <!-- displaying News articles -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <img src="{{image.image.url}}" class="img-responsive" alt="Image">
       <h2 class="text-center"> {{ image.name }}</h2> 
       <p>{{image.description}}<p>
       <p>{{image.category}}</p> 
@@ -19,7 +20,7 @@
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There No News Items</h2>
+    <h2 class="text-center">There No Gallerys Here</h2>
   </div>
   {% endfor %}
 
