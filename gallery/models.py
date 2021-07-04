@@ -1,5 +1,5 @@
 from django.db import models
-
+import pyperclip
 # Create your models here.
 
 class Poster(models.Model):
@@ -58,7 +58,15 @@ class Image(models.Model):
 
      def delete_image(self):
         self.delete()
-            
+
+     @classmethod
+     def search_by_category(cls, search_term):
+        image = cls.objects.filter(title__icontains=search_term)
+        return image
+
+     @classmethod
+     def copy_link(cls, link):
+         pyperclip.copy_link(link)
     
 
 

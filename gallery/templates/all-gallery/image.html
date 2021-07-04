@@ -1,0 +1,15 @@
+{% extends 'all-gallery/image.html'%}
+{%block content%}
+
+<div div="container">
+    <div class="row">
+        <img src="{{image.image.url}}" class="img-responsive" alt="">
+    </div>
+    <div class="row">
+        <h1 class="text-center">{{image.name}}</h1>
+    </div>
+    <div class="row">
+        <h3>{{image.description}}</h3>
+    </div>
+</div>
+{%endblock %}

@@ -1,7 +1,7 @@
 from gallery.models import Image,Poster,Location,Category
 from django.test import TestCase
 from django.core.files.uploadedfile import SimpleUploadedFile
-
+import pyperclip
 # Create your tests here.
 
 class ImageTestClass(TestCase):
@@ -10,6 +10,17 @@ class ImageTestClass(TestCase):
 
     def test_instances(self):
         self.assertTrue(isinstance(self.new,Image))    
+
+    
+    # def test_copy_image(self):
+    #     '''
+    #     Test to confirm that we are copying image link
+    #     '''
+
+    #     self.new_image.save_image()
+    #     Image.copy_link("www.com")
+
+    #     self.assertEqual(self.new_image.link,pyperclip.paste())    
 
     # testing save method
     # def test_save_method(self):
