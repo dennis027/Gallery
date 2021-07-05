@@ -47,3 +47,8 @@ def get_image_by_location(request):
 
 def copy_to_clipboard(request):
     pass
+
+def image_location(request, location):
+    images = Image.filter_by_location(location)
+    print(images)
+    return render(request, 'pictures/location.html', {'location_images': images})
