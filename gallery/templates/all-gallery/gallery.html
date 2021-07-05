@@ -2,16 +2,21 @@
 
 {% block content %}
 {{block.super}}
-
-<h1>My galaxies</h1>
 {%for image in images%}
+<div class="container">
 
 <div class="row">
+  <span id="locations">
+    {% for location in locations %}
+        <a class="btn btn-outline-info btn-sm" id="btn"
+           href="/location/{{location.name}}">{{location.name}}</a>
+    {%endfor%}
+ </span>
     
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-    <img src="{{image.image.url}}" class="img-responsive" alt="Image">
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <img src="{{image.image.url}}"  alt="Image">
      
-    <a href="{% url 'review' %}"> <h2 class="text-center"> {{ image.name }}</h2> </a>
+    <a href="{% url 'review' %}"> <h4 class="text-center"> {{ image.name }}</h4> </a>
     </div>
 
   </div>
@@ -24,4 +29,5 @@
   {% endfor %}
 
 </div>
+
 {% endblock %}
