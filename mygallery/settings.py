@@ -29,7 +29,14 @@ SECRET_KEY = 'k^d_n35k55e7l11#sxk!10j%2nig9$y(z+!8_nj8f2a)fr0l8m'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'gallery',
+        'USER': 'moringa',
+    'PASSWORD':'Access',
+    }
+}
 
 # Application definition
 
